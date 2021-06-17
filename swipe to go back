@@ -1,0 +1,10 @@
+self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+
+extension EventDetailsVC: UIGestureRecognizerDelegate {
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        if gestureRecognizer.isEqual(navigationController?.interactivePopGestureRecognizer) {
+            navigationController?.popViewController(animated: true)
+        }
+        return false
+    }
+}
